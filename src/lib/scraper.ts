@@ -8,10 +8,6 @@ export class Scraper {
     private readonly ioManager: IOManager,
   ) {}
 
-  async fetchAll(urls: string[], metadata = false) {
-    return urls.map((url) => this.fetch(url, metadata));
-  }
-
   async fetch(url: string, metadata = false) {
     const { origin, host } = new URL(url);
 
