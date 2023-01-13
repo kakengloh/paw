@@ -15,9 +15,9 @@ export class Scraper {
   async fetch(url: string, metadata = false) {
     const { origin, host } = new URL(url);
 
-    try {
-      const page = await this.browser.newPage();
+    const page = await this.browser.newPage();
 
+    try {
       const assets = new Set<string>();
 
       // Record every request
@@ -87,10 +87,10 @@ export class Scraper {
             ),
           ),
       );
-
-      await page.close();
     } catch (err) {
       console.error(`Failed to fetch page from "${url}":`, err);
+    } finally {
+      await page.close();
     }
   }
 
