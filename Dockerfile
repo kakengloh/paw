@@ -22,8 +22,8 @@ RUN pnpm i
 COPY . .
 RUN pnpm build
 
-# Create alias so that we can use it like `fetch ...`
-RUN echo 'alias fetch="node /app/dist/index.js $@"' >> ~/.bashrc
+# Create alias so that we can use it like `scrape ...`
+RUN echo 'alias scrape="node /app/dist/index.js $@"' >> ~/.bashrc
 
 # Expose port for serving scraped site
 EXPOSE 3000
