@@ -1,15 +1,15 @@
-# TS Scraper
+# Paw
 
 ## Quickstart
 
 1. Build Docker Image
 ```bash
-docker build -t ts-scraper .
+docker build -t paw .
 ```
 
 2. Run Docker Container
 ```bash
-docker run -it -p 3000:3000 ts-scraper
+docker run -it -p 3000:3000 paw
 ```
 
 ## Examples
